@@ -9,7 +9,7 @@ use crate::lcd;
 #[cfg(esp32p4)]
 use crate::ldo;
 use crate::ledc;
-#[cfg(any(all(esp32, esp_idf_eth_use_esp32_emac), esp_idf_eth_use_openeth))]
+#[cfg(any(all(any(esp32,esp32p4), esp_idf_eth_use_esp32_emac), esp_idf_eth_use_openeth))]
 use crate::mac;
 #[cfg(any(not(esp32p4), esp_idf_comp_espressif__esp_wifi_remote_enabled))]
 use crate::modem;
