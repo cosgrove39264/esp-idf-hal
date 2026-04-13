@@ -1,6 +1,6 @@
 [package]
 name = "esp-idf-hal"
-version = "0.46.2"
+version = "0.46.3"
 authors = ["sapir <yasapir@gmail.com>", "Ivan Markov <ivan.markov@gmail.com>"]
 edition = "2021"
 resolver = "2"
@@ -82,5 +82,6 @@ embedded-graphics = "0.7.1"
 
 # TODO: Remove this before next release, needed for IDF 6.0+ support
 [patch.crates-io]
-esp-idf-sys = { git = "https://github.com/esp-rs/esp-idf-sys", branch = "master" }
+# esp-idf-sys = { git = "https://github.com/esp-rs/esp-idf-sys", branch = "master" }
+esp-idf-sys = { path = "../esp-idf-sys" }
 embuild = { git = "https://github.com/esp-rs/embuild", branch = "master" } # IDF >6.0.0 strictly

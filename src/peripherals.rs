@@ -9,7 +9,11 @@ use crate::lcd;
 #[cfg(esp32p4)]
 use crate::ldo;
 use crate::ledc;
-#[cfg(any(all(esp32, esp_idf_eth_use_esp32_emac), esp_idf_eth_use_openeth))]
+#[cfg(any(
+    esp32p4,
+    all(esp32, esp_idf_eth_use_esp32_emac),
+    esp_idf_eth_use_openeth
+))]
 use crate::mac;
 #[cfg(any(not(esp32p4), esp_idf_comp_espressif__esp_wifi_remote_enabled))]
 use crate::modem;
@@ -123,7 +127,11 @@ pub struct Peripherals {
         esp_idf_comp_ulp_enabled
     ))]
     pub ulp: ulp::ULP<'static>,
-    #[cfg(any(all(esp32, esp_idf_eth_use_esp32_emac), esp_idf_eth_use_openeth))]
+    #[cfg(any(
+        esp32p4,
+        all(esp32, esp_idf_eth_use_esp32_emac),
+        esp_idf_eth_use_openeth
+    ))]
     pub mac: mac::MAC<'static>,
     #[cfg(any(not(esp32p4), esp_idf_comp_espressif__esp_wifi_remote_enabled))]
     pub modem: modem::Modem<'static>,
@@ -262,7 +270,11 @@ impl Peripherals {
                 esp_idf_comp_ulp_enabled
             ))]
             ulp: ulp::ULP::steal(),
-            #[cfg(any(all(esp32, esp_idf_eth_use_esp32_emac), esp_idf_eth_use_openeth))]
+            #[cfg(any(
+                esp32p4,
+                all(esp32, esp_idf_eth_use_esp32_emac),
+                esp_idf_eth_use_openeth
+            ))]
             mac: mac::MAC::steal(),
             #[cfg(any(not(esp32p4), esp_idf_comp_espressif__esp_wifi_remote_enabled))]
             modem: modem::Modem::steal(),
