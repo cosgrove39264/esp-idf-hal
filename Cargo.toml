@@ -61,7 +61,7 @@ embedded-hal-nb = "1"
 embedded-hal-async = "1"
 embedded-io = "0.7"
 embedded-io-async = "0.7"
-esp-idf-sys = "0.37.2"
+esp-idf-sys = { git = "https://github.com/cosgrove39264/esp-idf-sys.git", branch = "anpassungen" }
 critical-section = { version = "1.2", optional = true, features = ["restore-state-none"] }
 heapless = "0.9"
 enumset = { version = "1.1.4", default-features = false }
@@ -75,7 +75,6 @@ embuild = "0.33"
 
 [dev-dependencies]
 anyhow = "1"
-esp-idf-sys = "0.37.2"
 mipidsi = "0.5.0"
 display-interface-spi = "0.4.1"
 embedded-graphics = "0.7.1"
@@ -83,4 +82,3 @@ embedded-graphics = "0.7.1"
 # TODO: Remove this before next release, needed for IDF 6.0+ support
 [patch.crates-io]
 embuild = { git = "https://github.com/esp-rs/embuild", branch = "master" } # IDF >6.0.0 strictly
-esp-idf-sys = { git = "https://github.com/cosgrove39264/esp-idf-sys.git", branch = "anpassungen" }
